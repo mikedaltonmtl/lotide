@@ -8,7 +8,10 @@ const assertEqualArrays = function(arrA, arrB) {
     // loop through the items, comparing the two arrays
     for (let i in arrA) {
       // if there is a mis-match, change passing to false
-      if (arrA[i] !== arrB[i]) passing = false;
+      if (arrA[i] !== arrB[i]) {
+        passing = false;
+        break;  // no need to keep looping
+      }
     }
   }
   // if we've made it to the end and passing is still true, arrays must match
@@ -38,8 +41,8 @@ const flatten = function(packed) {
   return flat;
 };
 
-// use this!!!!
+// test code
 assertEqualArrays(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]); // should PASS
 assertEqualArrays(flatten([1, 2, [3, 4], 5, [6], [], [7, 8, 9, 10]]),
-  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // should PASS
+  [1, 2, 3, 4, 6, 7, 8, 9, 10]); // should FAIL
 assertEqualArrays(flatten([1, 2, [3, 4], 5, [6]]), [2, 2, 3, 4, 5, 6]); // should FAIL
