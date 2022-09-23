@@ -8,7 +8,8 @@ const assertEqual = function(actual, expected) {
 
 // function to return tail of a given array
 const tail = function(array) {
-  return array.slice(1);
+  // return an empty array if given array is empty or only has 1 element
+  return array.length < 2 ? [] : array.slice(1);
 };
 
 // Test Case: Check the original array
@@ -30,3 +31,13 @@ assertEqual(result2[1], "C"); // ensure second element is "C"
 assertEqual(result2[2], "D"); // ensure third element is "D"
 assertEqual(result2[3], "E"); // ensure fourth element is "E"
 assertEqual(result2[3], "e"); // test failure on fourth element
+
+// Test Case 3:
+const result3 = tail([1]);
+assertEqual(Array.isArray(result3), true); // ensure we get back an array
+assertEqual(result3.length, 0); // ensure array is empty
+
+// Test Case 4:
+const result4 = tail([]);
+assertEqual(Array.isArray(result4), true); // ensure we get back an array
+assertEqual(result4.length, 0); // ensure we get back an empty string
