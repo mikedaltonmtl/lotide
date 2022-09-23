@@ -1,29 +1,14 @@
-// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
-    console.log(`😀😀😀 Assertion Passed: ${actual} === ${expected}`);
+    console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`😡😡😡 Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`👎👎👎 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-// TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual("Bootcamp", "Bootcamp");
-// assertEqual(1, 5);
-// assertEqual("1", 1);
-// assertEqual(false, null);
-
 // function to return tail of a given array
-const tail = function(arrayIn) {
-  // initialize a new array
-  let arrayOut = [];
-  // loop through the input array, adding all but the first element to the new array
-  for (let i = 1; i < arrayIn.length; i++) {
-    arrayOut.push(arrayIn[i]);
-  }
-  return arrayOut;
+const tail = function(array) {
+  return array.slice(1);
 };
 
 // Test Case: Check the original array
