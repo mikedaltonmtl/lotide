@@ -1,3 +1,5 @@
+// function recieives 2 values (not arrays)
+// Prints 'Passed' to console if values are identical of 'Failed' if not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);
@@ -7,6 +9,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // function to return tail of a given array
+// receives array, returns copy of array excluding the first element
 const tail = function(array) {
   // return an empty array if given array is empty or only has 1 element
   return array.length < 2 ? [] : array.slice(1);

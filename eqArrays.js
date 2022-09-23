@@ -1,3 +1,5 @@
+// function recieives 2 values (not arrays)
+// Prints 'Passed' to console if values are identical of 'Failed' if not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);
@@ -7,6 +9,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and returns true if they are identical
 const eqArrays = function(arrA, arrB) {
   // only start comparing if the arrays are of the same length
   if (arrA.length !== arrB.length) return false;

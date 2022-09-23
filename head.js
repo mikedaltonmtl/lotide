@@ -1,3 +1,5 @@
+// function recieives 2 values (not arrays)
+// Prints 'Passed' to console if values are identical of 'Failed' if not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);

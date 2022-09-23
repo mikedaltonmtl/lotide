@@ -1,4 +1,5 @@
 // function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and returns true if they are identical
 const eqArrays = function(arrA, arrB) {
   // only start comparing if the arrays are of the same length
   if (arrA.length !== arrB.length) return false;
@@ -10,7 +11,8 @@ const eqArrays = function(arrA, arrB) {
   // if we've made it to the end without returning false, arrays must match
   return true;
 };
-
+// function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and prints result to console (Passed / Failed)
 const assertArraysEqual = function(arrA, arrB) {
   // send the arrays to eqArrays, output message depending on result returned
   if (eqArrays(arrA, arrB)) {
@@ -21,6 +23,8 @@ const assertArraysEqual = function(arrA, arrB) {
 };
 
 // flatten up to one level only of nested arrays
+// recieves array that may be nested (one level only)
+// returns array containing all elements, but no longer nested
 const flatten = function(packed) {
   let flat = [];  // initialize return array
   // loop through packed array

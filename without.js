@@ -1,4 +1,5 @@
 // function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and returns true if they are identical
 const eqArrays = function(arrA, arrB) {
   // only start comparing if the arrays are of the same length
   if (arrA.length !== arrB.length) return false;
@@ -10,8 +11,8 @@ const eqArrays = function(arrA, arrB) {
   // if we've made it to the end without returning false, arrays must match
   return true;
 };
-
 // function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and prints result to console (Passed / Failed)
 const assertArraysEqual = function(arrA, arrB) {
   // send the arrays to eqArrays, output message depending on result returned
   if (eqArrays(arrA, arrB)) {
@@ -20,8 +21,8 @@ const assertArraysEqual = function(arrA, arrB) {
     console.log(`👎👎👎 Assertion Failed: ${arrA} !== ${arrB}`);
   }
 };
-
-// function to remove given items from array
+// function to remove given items (itemsToRemove) from given array (source)
+// return new array of source elements minus the itemsToRemove elements
 const without = function(source, itemsToRemove) {
   let filtered = [];  // initialize output array
   let keep = true;    // initialize comparison result
