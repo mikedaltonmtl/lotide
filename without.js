@@ -1,5 +1,5 @@
 // function to test whether 2 arrays (not nested) are identical
-const assertEqualArrays = function(arrA, arrB) {
+const assertArraysEqual = function(arrA, arrB) {
   let passing = true; // initialize result variable
   // only start comparing if the arrays are of the same length
   if (arrA.length !== arrB.length) {
@@ -23,12 +23,12 @@ const assertEqualArrays = function(arrA, arrB) {
 };
 
 // TEST CODE
-// assertEqualArrays([1, 2, 3], [1, 2, 3]); // => should PASS
-// assertEqualArrays([1, 2, 3], [3, 2, 1]); // => should FAIL
+// assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+// assertArraysEqual([1, 2, 3], [3, 2, 1]); // => should FAIL
 
-// assertEqualArrays(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
-// assertEqualArrays(["1", "2", "3"], ["1", "2", 3]); // => should FAIL
-// assertEqualArrays(["1", "2", "3"], ["1", "2", "3", "4"]); // => should FAIL
+// assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
+// assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => should FAIL
+// assertArraysEqual(["1", "2", "3"], ["1", "2", "3", "4"]); // => should FAIL
 
 
 // FUNCTION IMPLEMENTATION
@@ -93,11 +93,11 @@ const without = function(source, itemsToRemove) {
 console.log(without([1, 2, 3], [1])); // => [2, 3]
 console.log(without(["1", "2", "3"], [1, 2, "3"]));  // => ["1", "2"]
 
-assertEqualArrays(without([1, 2, 3], [1]), [2, 3]); // => should PASS
-assertEqualArrays(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => should PASS
-assertEqualArrays(without(["chocs", "cheese", "carrot"], ["cheese", "carrot"]), ["chocs"]); // => should PASS
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => should PASS
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => should PASS
+assertArraysEqual(without(["chocs", "cheese", "carrot"], ["cheese", "carrot"]), ["chocs"]); // => should PASS
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
-assertEqualArrays(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);

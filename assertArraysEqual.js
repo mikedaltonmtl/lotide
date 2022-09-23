@@ -1,5 +1,5 @@
 // function to test whether 2 arrays (not nested) are identical
-const assertEqualArrays = function(arrA, arrB) {
+const assertArraysEqual = function(arrA, arrB) {
   let passing = true; // initialize result variable
   // only start comparing if the arrays are of the same length
   if (arrA.length !== arrB.length) {
@@ -23,9 +23,9 @@ const assertEqualArrays = function(arrA, arrB) {
 };
 
 // TEST CODE
-assertEqualArrays([1, 2, 3], [1, 2, 3]); // => should PASS
-assertEqualArrays([1, 2, 3], [3, 2, 1]); // => should FAIL
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // => should FAIL
 
-assertEqualArrays(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
-assertEqualArrays(["1", "2", "3"], ["1", "2", 3]); // => should FAIL
-assertEqualArrays(["1", "2", "3"], ["1", "2", "3", "4"]); // => should FAIL
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => should FAIL
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3", "4"]); // => should FAIL
