@@ -1,4 +1,4 @@
-// function recieives 2 values (not arrays)
+// function recieives 2 values (primitive data types)
 // Prints 'Passed' to console if values are identical of 'Failed' if not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
