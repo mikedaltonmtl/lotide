@@ -1,13 +1,3 @@
-// function recieives 2 values (primitive data types)
-// Prints 'Passed' to console if values are identical of 'Failed' if not
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`👎👎👎 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 // function to test whether 2 arrays (not nested) are identical
 // recieves 2 arrays and returns true if they are identical
 const eqArrays = function(arrA, arrB) {
@@ -20,6 +10,17 @@ const eqArrays = function(arrA, arrB) {
   }
   // if we've made it to the end without returning false, arrays must match
   return true;
+};
+
+// function to test whether 2 arrays (not nested) are identical
+// recieves 2 arrays and prints result to console (Passed / Failed)
+const assertArraysEqual = function(arrA, arrB) {
+  // send the arrays to eqArrays, output message depending on result returned
+  if (eqArrays(arrA, arrB)) {
+    console.log(`💚💚💚 Assertion Passed: ${arrA} === ${arrB}`);
+  } else {
+    console.log(`👎👎👎 Assertion Failed: ${arrA} !== ${arrB}`);
+  }
 };
 
 /* function that returns all the indices (zero-based positions) in the given string
@@ -40,12 +41,11 @@ const letterPositions = function(sentence) {
     // if the letter already exists in the return object, add the index
     if (results[sentence[i]]) {
 
-      results[sentence[i]].push(Number(i)); // convert to number (passed as string)
+      results[sentence[i]].push(Number(i)); // convert i to number (passed as string)
 
     } else {
       // else add the letter and index to the return object
-      results[sentence[i]] = [Number(i)]; // convert to number (passed as string)
-
+      results[sentence[i]] = [Number(i)]; // convert i to number (passed as string)
     }
   }
   return results; // return result object
@@ -53,21 +53,19 @@ const letterPositions = function(sentence) {
 
 // test code
 console.log('test: he llo ------------------------------');
-const result1 = letterPositions('he llo');
-assertEqual(eqArrays(result1['h'], [0]), true);
-assertEqual(eqArrays(result1['e'], [1]), true);
-assertEqual(eqArrays(result1['l'], [3, 4]), true);
-assertEqual(eqArrays(result1['o'], [5]), true);
+assertArraysEqual(letterPositions('he llo')['h'], [0]);
+assertArraysEqual(letterPositions('he llo')['e'], [1]);
+assertArraysEqual(letterPositions('he llo')['l'], [3, 4]);
+assertArraysEqual(letterPositions('he llo')['o'], [5]);
 
 console.log('test: lighthouse in the house -------------');
-const result2 = letterPositions('lighthouse in the house');
-assertEqual(eqArrays(result2['l'], [0]), true);
-assertEqual(eqArrays(result2['i'], [1, 11]), true);
-assertEqual(eqArrays(result2['g'], [2]), true);
-assertEqual(eqArrays(result2['h'], [3, 5, 15, 18]), true);
-assertEqual(eqArrays(result2['t'], [4, 14]), true);
-assertEqual(eqArrays(result2['o'], [6, 19]), true);
-assertEqual(eqArrays(result2['u'], [7, 20]), true);
-assertEqual(eqArrays(result2['s'], [8, 21]), true);
-assertEqual(eqArrays(result2['e'], [9, 16, 22]), true);
-assertEqual(eqArrays(result2['n'], [12]), true);
+assertArraysEqual(letterPositions('lighthouse in the house')['l'], [0]);
+assertArraysEqual(letterPositions('lighthouse in the house')['i'], [1, 11]);
+assertArraysEqual(letterPositions('lighthouse in the house')['g'], [2]);
+assertArraysEqual(letterPositions('lighthouse in the house')['h'], [3, 5, 15, 18]);
+assertArraysEqual(letterPositions('lighthouse in the house')['t'], [4, 14]);
+assertArraysEqual(letterPositions('lighthouse in the house')['o'], [6, 19]);
+assertArraysEqual(letterPositions('lighthouse in the house')['u'], [7, 20]);
+assertArraysEqual(letterPositions('lighthouse in the house')['s'], [8, 21]);
+assertArraysEqual(letterPositions('lighthouse in the house')['e'], [9, 16, 22]);
+assertArraysEqual(letterPositions('lighthouse in the house')['n'], [12]);
