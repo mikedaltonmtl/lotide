@@ -19,22 +19,21 @@ const assertEqual = function(actual, expected) {
 
 const findKeyByValue = function(object, value) {
 
-    // loop through object keys
-    for (const key in object) {
+  // loop through object keys
+  for (const key in object) {
 
-      // if the value of the key matches search value, return the key
-      if (object[key] === value) return key;
+    // if the value of the key matches search value, return the key
+    if (object[key] === value) return key;
 
-    }
+  }
 
-    return undefined; // the loop ended wihout a match
-
+  return undefined; // the loop ended wihout a match
 };
 
 
 // test code
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
