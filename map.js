@@ -23,12 +23,33 @@ const assertArraysEqual = function(arrA, arrB) {
   }
 };
 
-// TEST CODE
-assertArraysEqual([], []); // => should PASS
+// map function will take in two arguments:
+//  1. An array to map
+//  2. A callback function
+// function will return a new array based on results of the callback function
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => should FAIL
+const map = function(array, callback) {
+  const results = []; // initialize results array
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => should PASS
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => should FAIL
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3", "4"]); // => should FAIL
+  // loop through array elements
+  for (let item of array) {
+
+    // affect the element using the callback function and add to results array
+    results.push(callback(item));
+  }
+
+  return results;
+};
+
+const words = ["ground", "control", "to", "major", "tom"];
+const results1 = map(words, word => word[0]);
+assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
+
+const results2 = map(words, word => word += "ly");
+assertArraysEqual(results2, ["groundly", "controlly", "toly", "majorly", "tomly"]);
+
+const results3 = map(words, word => word[0] + word[word.length - 1]);
+assertArraysEqual(results3, ["gd", "cl", "to", "mr", "tm"]);
+
+const results4 = map(words, word => word.length);
+assertArraysEqual(results4, [6, 7, 2, 5, 3]);
