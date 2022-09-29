@@ -31,12 +31,10 @@ const assertArraysEqual = function(arrA, arrB) {
 const map = function(array, callback) {
   const results = []; // initialize results array
 
-  // loop through array elements
-  for (let item of array) {
+  // loop through each array item using forEach
+  // push each modified item to the results array
 
-    // affect the element using the callback function and add to results array
-    results.push(callback(item));
-  }
+  array.forEach(item => results.push(callback(item)));
 
   return results;
 };
