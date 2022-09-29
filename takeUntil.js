@@ -36,7 +36,7 @@ const assertArraysEqual = function(arrA, arrB) {
  * The function will return a "slice of the array with elements taken from
  * the beginning."
  * It should keep going until the callback/predicate returns a truthy value.
-*/
+ */
 const takeUntil = function(array, callback) {
   
   // initialize array of results that will be returned by the function
