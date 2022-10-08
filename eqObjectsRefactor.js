@@ -30,6 +30,10 @@ const eqObjects = function(object1, object2) {
   // test for number of keys
   if (Object.keys(object1).length !== Object.keys(object2).length) return false;
 
+  // 'flatten' any nested objects
+  object1 = flattenObject(object1);
+  object2 = flattenObject(object2);
+
   // loop through object1, testing for matching keys in object2
   for (const key in object1) {
 
@@ -60,11 +64,11 @@ const flattenObject = function(object) {
         // create new key / values in the original object from the element object
         object[key] = object[element][key];
       }
-    // delete the key of the original object that was holding the object element
-    delete object[element];
+      // delete the key of the original object that was holding the object element
+      delete object[element];
 
-    // recall this function for any other instances of nested objects
-    flattenObject(object);
+      // recall this function for any other instances of nested objects
+      flattenObject(object);
     }
   }
   return object;
@@ -127,4 +131,4 @@ assertEqual(eqObjects(obj13, obj14), false);
 console.log('recursion8 ------------');
 const obj15 = { m: [1, 2], n: "x", a: { y: 0, z: { x: 4, w:1 } }, b: 2 };
 const obj16 = { b: 2, a: { y: 0, z: { x: 4, w:1 } }, m: [1, 2], n: "x" };
-assertEqual(eqObjects(obj15, obj16), false);
+assertEqual(eqObjects(obj15, obj16), true);
