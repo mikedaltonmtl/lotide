@@ -1,5 +1,7 @@
-// function recieives 2 values (primitive data types)
-// Prints 'Passed' to console if values are identical of 'Failed' if not
+/* Function receives 2 values (primitive data types).
+ * Prints the result of the assertion to the console:
+ * 'Assertion Passed' if the values are identical of 'Assertion Failed' if not.
+ */
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`💚💚💚 Assertion Passed: ${actual} === ${expected}`);
@@ -8,10 +10,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp"); // FAIL
-assertEqual(1, 1);  // PASS
-assertEqual("Bootcamp", "Bootcamp");  // PASS
-assertEqual(1, 5);  // FAIL
-assertEqual("1", 1);  // FAIL
-assertEqual(false, null); // FAIL
+module.exports = assertEqual;
