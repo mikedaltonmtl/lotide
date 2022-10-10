@@ -46,6 +46,7 @@ const takeUntil = function(array, callback) {
   for (const item of array) {
 
     if (callback(item)) break;
+    
     results.push(item);
 
   }
