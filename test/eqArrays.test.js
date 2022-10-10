@@ -1,7 +1,7 @@
 // Import the assertEqual module.
 const assertEqual = require('../assertEqual');
 
-// Import the head module.
+// Import the eqArrays module.
 const eqArrays = require('../eqArrays');
 
 

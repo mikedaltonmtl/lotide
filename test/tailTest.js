@@ -1,7 +1,7 @@
 // Import the assertEqual module.
 const assertEqual = require('../assertEqual');
 
-// Import the head module.
+// Import the tail module.
 const tail = require('../tail');
 
 // Test Case: Check the original array
