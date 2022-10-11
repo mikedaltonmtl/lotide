@@ -1,4 +1,3 @@
-// Import the tail module.
 const tail = require('../tail');
 const assert = require('chai').assert;
 

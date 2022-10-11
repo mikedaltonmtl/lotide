@@ -1,4 +1,3 @@
-// Import the head module.
 const head = require('../head');
 const assert = require('chai').assert;
 

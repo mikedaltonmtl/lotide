@@ -1,4 +1,3 @@
-// Import the assertArraysEqual module.
 const assertArraysEqual = require('../assertArraysEqual');
 
 assertArraysEqual([], []); // should PASS
