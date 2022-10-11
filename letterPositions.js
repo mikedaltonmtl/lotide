@@ -5,7 +5,7 @@
  * results: object returned by function { letter: [indexe(s) of 'sentence' where letter is found]
  */
 const letterPositions = function(sentence) {
-  
+
   const results = {}; // initialize return object
 
   // loop through string using 'for...in' as we need the indexes
